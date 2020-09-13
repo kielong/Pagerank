@@ -254,4 +254,4 @@ INFO:root:rank=7 pagerank=5.3073e-02 url=www.lawfareblog.com/china-releases-posi
 INFO:root:rank=8 pagerank=5.3073e-02 url=www.lawfareblog.com/water-wars-philippines-pivots-towards-beijing
 INFO:root:rank=9 pagerank=5.3073e-02 url=www.lawfareblog.com/revisiting-marawi-women-and-struggle-against-islamic-state-philippines
 ```
-Your goal should be to discover what topics that www.lawfareblog.com considers to be related to the national security topic you choose.
+The main topic that www.lawfareblog.com considers to be related to 'The Philippines' as a national security topic is the South China Sea Arbitration, and the articles are around 4-5 years old. 
