@@ -260,7 +260,7 @@ The main topic that www.lawfareblog.com considers to be related to 'The Philippi
 
 Finally, I modified the url_satisfies_query function so that it also searches for the keywords in the query and the 5 most similar words. The results when searching for "weapons" is the following:
 ```
-kielong24@Kiels-MacBook-Pro:~/MATH166/Pagerank$ python3 pagerank.py --data=./lawfareblog.csv.gz --search_query='weapons'
+$ kielong24@Kiels-MacBook-Pro:~/MATH166/Pagerank$ python3 pagerank.py --data=./lawfareblog.csv.gz --search_query='weapons'
 INFO:gensim.models.keyedvectors:precomputing L2-norms of word weight vectors
 INFO:root:rank=0 pagerank=2.7559e-02 url=www.lawfareblog.com/why-did-you-wait-moral-emptiness-and-drone-strikes
 INFO:root:rank=1 pagerank=1.8394e-02 url=www.lawfareblog.com/dc-district-court-dismisses-journalists-drone-lawsuit
