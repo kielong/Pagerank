@@ -11,7 +11,10 @@ import gzip
 import csv
 
 import logging
+import gensim.downloader
 
+global vectors
+vectors = gensim.downloader.load('glove-twitter-25')
 
 class WebGraph():
 
@@ -216,6 +219,18 @@ def url_satisfies_query(url, query):
     '''
     satisfies = False
     terms = query.split()
+    non_dash_terms = []
+    # get terms that  are not preceded by the negation sign
+    for term in terms:
+        if term[0] != '-':
+            non_dash_terms.append(term)
+    
+    # gets the words that are most similar to all the terms
+    most_similar = vectors.most_similar(non_dash_terms)
+   
+    for i in range(5):  # add the top 5 most similar terms to the terms list
+        temp_word = most_similar[i][0]
+        terms.append(temp_word)
 
     num_terms=0
     for term in terms:
