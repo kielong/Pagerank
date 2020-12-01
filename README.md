@@ -240,7 +240,7 @@ Both of these articles are highly relevant to coronavirus discussions,
 but a simple keyword search for corona or related terms would not find these articles.
 
 **Part 3:**
-Finally, I experimented on a national security topic other than the coronavirus, namely the Philippines. I ran the following command to find the relevant articles about the Philippines:
+I experimented on a national security topic other than the coronavirus, namely the Philippines. I ran the following command to find the relevant articles about the Philippines:
 ```
 $ python3 pagerank.py --data=./lawfareblog.csv.gz --filter_ratio=0.2 --personalization_vector_query='philippines' --search_query='philippines'
 INFO:root:rank=0 pagerank=6.1833e-02 url=www.lawfareblog.com/american-paralysis-and-troubles-south-china-sea-primer-philippines-china-arbitration
@@ -255,3 +255,21 @@ INFO:root:rank=8 pagerank=5.3073e-02 url=www.lawfareblog.com/water-wars-philippi
 INFO:root:rank=9 pagerank=5.3073e-02 url=www.lawfareblog.com/revisiting-marawi-women-and-struggle-against-islamic-state-philippines
 ```
 The main topic that www.lawfareblog.com considers to be related to 'The Philippines' as a national security topic is the South China Sea Arbitration, and the articles are around 4-5 years old. 
+
+## Task 3: Word To Vector
+
+Finally, I modified the url_satisfies_query function so that it also searches for the keywords in the query and the 5 most similar words. The results when searching for "weapons" is the following:
+```
+kielong24@Kiels-MacBook-Pro:~/MATH166/Pagerank$ python3 pagerank.py --data=./lawfareblog.csv.gz --search_query='weapons'
+INFO:gensim.models.keyedvectors:precomputing L2-norms of word weight vectors
+INFO:root:rank=0 pagerank=2.7559e-02 url=www.lawfareblog.com/why-did-you-wait-moral-emptiness-and-drone-strikes
+INFO:root:rank=1 pagerank=1.8394e-02 url=www.lawfareblog.com/dc-district-court-dismisses-journalists-drone-lawsuit
+INFO:root:rank=2 pagerank=1.1297e-02 url=www.lawfareblog.com/revived-cia-drone-strike-program-comments-new-policy
+INFO:root:rank=3 pagerank=1.0416e-02 url=www.lawfareblog.com/us-court-appeals-dc-circuit-dismisses-suit-over-us-drone-strike
+INFO:root:rank=4 pagerank=5.9405e-03 url=www.lawfareblog.com/iran-shoots-down-us-drone-domestic-and-international-legal-implications
+INFO:root:rank=5 pagerank=5.6641e-03 url=www.lawfareblog.com/slaughterbots-and-other-anticipated-autonomous-weapons-problems
+INFO:root:rank=6 pagerank=5.3081e-03 url=www.lawfareblog.com/german-courts-weigh-legal-responsibility-us-drone-strikes
+INFO:root:rank=7 pagerank=3.5341e-03 url=www.lawfareblog.com/shift-jsoc-drone-strikes-does-not-mean-cia-has-been-sidelined
+INFO:root:rank=8 pagerank=3.1659e-03 url=www.lawfareblog.com/atomwaffen-division-member-pleads-guilty-firearms-charge
+INFO:root:rank=9 pagerank=2.9818e-03 url=www.lawfareblog.com/waiving-imminent-threat-test-cia-drone-strikes-pakistan
+```
